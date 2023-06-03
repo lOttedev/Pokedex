@@ -10,8 +10,8 @@ function PokemonCard({pokemon}) {
     };
   
     return (
-      <div className="pokemon-card">
-        <figure className="card">
+      <div className="pokemon-card" style={{display: "flex", justifyContent:"center"}}>
+        <figure className="card" >
           <img
             src={pokidentity()}
             alt={pokemon.name + pokidentity()}

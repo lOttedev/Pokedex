@@ -59,28 +59,18 @@ const pokemonList = [
   function App() {
     const [pokemonIndex, setPokemonIndex] = useState(0);
     const pokemon = pokemonList[pokemonIndex];
-
-    const handleClickPrevious = () => {
-      setPokemonIndex((prevIndex) =>
-        prevIndex === 0 ? pokemonList.length - 1 : prevIndex - 1
-      )
-    }
-  
-    const handleClickNext = () => {
-      setPokemonIndex((nextIndex) =>
-        nextIndex === pokemonList.length - 1 ? 0 : nextIndex + 1
-      )
-    }
-
+    const showAnotherPokemon = (selectedPokemonIndex) => {
+      setPokemonIndex(selectedPokemonIndex);
+    };
   return (
     <div>
     <MyTitle />
     <PokemonCard 
         pokemon={pokemon}
    />
-    <NavBar
-      handleClickPrevious = {handleClickPrevious}
-      handleClickNext = {handleClickNext}
+      <NavBar
+    pokemonList={pokemonList}
+    showAnotherPokemon={showAnotherPokemon}
     />
     </div>
   )
