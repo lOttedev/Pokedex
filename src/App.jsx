@@ -2,6 +2,7 @@ import MyTitle from "./components/MyTitle"
 import PokemonCard from "./components/PokemonCard"
 import NavBar from "./components/NavBar"
 import { useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 
 
@@ -71,6 +72,16 @@ const pokemonList = [
         nextIndex === pokemonList.length - 1 ? 0 : nextIndex + 1
       )
     }
+
+    useEffect(() => {
+      alert("Hello pokemon trainer :)");
+    }, []);
+  
+    useEffect(() => {
+      if (pokemon.name === "pikachu") {
+        alert("Pika pikachu !!!");
+      }
+    }, [pokemon]);
 
   return (
     <div>
